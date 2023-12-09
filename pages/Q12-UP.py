@@ -8,10 +8,11 @@ Q12_UP_Text = st.session_state["Q12_UP"].replace('a', a12_up)
 Q12_UP_Text = Q12_UP_Text.replace('b', b12_up)
 right_answer = float(st.session_state['a12_up']/st.session_state['b12_up'])
 y12_up = str(st.session_state["y12_up"])
+y12_up = y12_up.replace('몫', '답')
 
 st.header("고난도 문제 5번")
 st.subheader(Q12_UP_Text)
-st.subheader(f"단, 답을 {y12_up}하시오.")
+st.subheader(f"단, {y12_up}하시오.")
 answer1 = st.number_input("답 : ", key="1")
 st.session_state["N12_UP"] = True
 
