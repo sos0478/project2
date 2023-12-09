@@ -152,5 +152,5 @@ if st.session_state["C13"] == 1 and st.session_state["C14"] == 1:
     st.session_state["N14"] = True
 
 st.write("13번 문제와 14번 문제를 성공적으로 풀었다면 고난도 문제에 도전할 수 있습니다.")
-if st.button("고난도 문제 풀어보기", disabled=st.session_state["N12-UP"]):
+if st.button("고난도 문제 풀어보기", disabled=st.session_state["N14-UP"]):
     switch_page("Q14-UP")
