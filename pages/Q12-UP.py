@@ -11,7 +11,7 @@ y12_up = str(st.session_state["y12_up"])
 
 st.header("고난도 문제 5번")
 st.subheader(Q12_UP_Text)
-st.subheader("단, 답을 ", y12_up,"하시오.")
+st.subheader(f"단, 답을 {y12_up}하시오.")
 answer1 = st.number_input("답 : ", key="1")
 st.session_state["N12_UP"] = True
 
