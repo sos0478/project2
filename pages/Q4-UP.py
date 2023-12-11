@@ -9,8 +9,10 @@ Q4_UP_Text = Q4_UP_Text.replace('b', b4_up)
 
 st.header("고난도 문제 2번")
 st.subheader(Q4_UP_Text)
-answer1 = st.number_input("답 : ", key="1")
-st.session_state["N4_UP"] = True
+answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
+
+if "N4_UP" not in st.session_state:
+    st.session_state["N4_UP"] = True
 
 if "B14" not in st.session_state:
     st.session_state["B14"] = False

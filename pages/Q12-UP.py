@@ -13,8 +13,10 @@ y12_up = y12_up.replace('몫', '답')
 st.header("고난도 문제 5번")
 st.subheader(Q12_UP_Text)
 st.subheader(f"단, {y12_up}하시오.")
-answer1 = st.number_input("답 : ", key="1")
-st.session_state["N12_UP"] = True
+answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
+
+if "N12_UP" not in st.session_state:
+    st.session_state["N12_UP"] = True
 
 if "B45" not in st.session_state:
     st.session_state["B45"] = False

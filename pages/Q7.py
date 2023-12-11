@@ -4,8 +4,10 @@ import pandas as pd
 
 Q7_Text = f'7. {int(st.session_state["a7"])} \u00F7 {st.session_state["b7"]} ='
 st.title(Q7_Text)
-answer1 = st.number_input("답 : ", key="1")
-st.session_state["N7"] = True
+answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
+
+if "N7" not in st.session_state:
+    st.session_state["N7"] = True
 
 if "B22" not in st.session_state:
     st.session_state["B22"] = False
@@ -32,7 +34,7 @@ if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state[
 
 if st.session_state["Q7"] == 1:
     st.write("혹시 계산 실수가 있었나요? 천천히 계산해보고 다시 답을 입력해주세요.")
-    answer2 = st.number_input("답 : ", key="2")
+    answer2 = st.number_input("답 : ", key="2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B23"]):     
         if float(answer2) == float(st.session_state["x7"]):
             st.session_state["C7"] = st.session_state["C7"] + 1
@@ -54,7 +56,7 @@ if st.session_state["Q7"] == 2:
     st.write("그렇다면 자연수의 나눗셈으로 바꾼 식을 풀어봅시다.")
     Q7_easy_Text = f"7. {a7} \u00F7 {b7} ="
     st.markdown(Q7_easy_Text)
-    answer3 = st.number_input("답 : ", key="3")
+    answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B24"]): 
         if float(answer3) == float(st.session_state["x7"]):
             st.session_state["N7"] = False

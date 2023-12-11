@@ -4,9 +4,13 @@ import pandas as pd
 
 Q4_Text = f'4. {st.session_state["a4"]} \u00F7 {st.session_state["b4"]} ='
 st.title(Q4_Text)
-answer1 = st.number_input("답 : ", key="1")
-st.session_state["N4"] = True
-st.session_state["N4-UP"] = True
+answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
+
+
+if "N4" not in st.session_state:
+    st.session_state["N4"] = True
+if "N4-UP" not in st.session_state:
+    st.session_state["N4-UP"] = True
 
 if "B11" not in st.session_state:
     st.session_state["B11"] = False
@@ -32,7 +36,7 @@ if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state[
 
 if st.session_state["Q4"] == 1:
     st.write("혹시 계산 실수가 있었나요? 천천히 계산해보고 다시 답을 입력해주세요.")
-    answer2 = st.number_input("답 : ", key="2")
+    answer2 = st.number_input("답 : ", key="2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B12"]):     
         if float(answer2) == float(st.session_state["x4"]):
             st.session_state["C4"] = st.session_state["C4"] + 1
@@ -53,7 +57,7 @@ if st.session_state["Q4"] == 2:
     st.write("그렇다면 자연수의 나눗셈으로 바꾼 식을 풀어봅시다.")
     Q4_easy_Text = f"4. {a4} \u00F7 {b4} ="
     st.markdown(Q4_easy_Text)
-    answer3 = st.number_input("답 : ", key="3")
+    answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B13"]): 
         if float(answer3) == float(st.session_state["x4"]):
             st.session_state["N4"] = False

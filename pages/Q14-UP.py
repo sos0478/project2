@@ -10,8 +10,10 @@ right_answer = float(st.session_state['a14_up']/st.session_state['b14_up'])
 
 st.header("고난도 문제 6번")
 st.subheader(Q14_UP_Text)
-answer1 = st.number_input("답 : ", key="1")
-st.session_state["N14_UP"] = True
+answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
+
+if "N14_UP" not in st.session_state:
+    st.session_state["N14_UP"] = True
 
 if "B58" not in st.session_state:
     st.session_state["B58"] = False

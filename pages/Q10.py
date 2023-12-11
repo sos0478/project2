@@ -6,7 +6,9 @@ import pandas as pd
 Q10_Text = f'10. {st.session_state["a10"]} \u00F7 {st.session_state["b10"]}의 몫을 어림하여 다음 중에서 고르시오.'
 st.subheader(Q10_Text)
 answer1 = st.radio("답 : ", [st.session_state["y10-1"], st.session_state["y10-2"], int(st.session_state["y10-3"])], key="1")
-st.session_state["N10"] = True
+
+if "N10" not in st.session_state:
+    st.session_state["N10"] = True
 
 if "B31" not in st.session_state:
     st.session_state["B31"] = False
