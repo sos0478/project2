@@ -70,7 +70,7 @@ if st.session_state["Q8"] == 3:
     st.session_state["N8"] = False
     st.write("오답입니다. 자연수끼리의 나눗셈에도 어려움이 있거나 계산 실수가 있는 것 같네요. 일단 다음 문제를 이어서 풀어봅시다.")
 
-if st.session_state["C8"] == 1 and st.session_state["C8"] == 1:
+if st.session_state["C7"] == 1 and st.session_state["C8"] == 1:
     st.session_state["N8-UP"] = False
     st.session_state["N8"] = True
 

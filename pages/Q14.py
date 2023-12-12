@@ -76,7 +76,7 @@ if st.session_state["Q14"] == 2.1:
             st.session_state["Q14"] = st.session_state["Q14"] + 1
 
 
-if st.session_state["Q13"] == 2.5:
+if st.session_state["Q14"] == 2.5:
     st.write("그럼 이제 몫의 자연수 부분을 이용하여 나머지를 구해봅시다.")
     st.write("방금 입력한 몫의 자연수 부분인 ", int(right_answer), "를 나누는 수인 ", st.session_state['b14'], "에 곱해서 나누어지는 수인 ", st.session_state['a14'], "에서 빼주면 됩니다.")
     st.write(Q14_Text)

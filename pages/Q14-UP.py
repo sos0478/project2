@@ -24,8 +24,7 @@ def make1():
 st.write("고난도 문제는 채점 기회가 1번 뿐이니 신중하게 눌러주세요.")
 if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state["B58"]):
     if float(answer1) == float(st.session_state["x14_up"]):
-        st.session_state["C13"] = st.session_state["C13"] + 1
-        st.session_state["C14"] = st.session_state["C14"] + 1
+        st.session_state["UP6"] = st.session_state["UP6"] + 1
         st.session_state["N14_UP"] = False
         st.write("정답입니다.")
     else:
