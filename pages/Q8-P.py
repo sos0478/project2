@@ -3,7 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 import pandas as pd
 
 Q8_Text = f'연습 8-1. {int(st.session_state["a8_p1"])} \u00F7 {st.session_state["b8_p1"]} ='
-st.title(Q8_Text)
+st.subheader(Q8_Text)
 answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
 
 if "B25_p1" not in st.session_state:
@@ -61,7 +61,7 @@ if st.session_state["Q8_p1"] == 3:
 
 
 Q8_Text_p2 = f'연습 8-2. {int(st.session_state["a8_p2"])} \u00F7 {st.session_state["b8_p2"]} ='
-st.title(Q8_Text_p2)
+st.subheader(Q8_Text_p2)
 answer1_p2 = st.number_input("답 : ", key="1_p2", value=None, placeholder="답을 입력하세요.", format="%f")
 
 if "B25_p2" not in st.session_state:

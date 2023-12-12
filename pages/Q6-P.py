@@ -3,7 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 import pandas as pd
 
 Q6_Text = f'연습 6-1. {st.session_state["a6_p1"]} \u00F7 {st.session_state["b6_p1"]} ='
-st.title(Q6_Text)
+st.subheader(Q6_Text)
 answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
 
 if "B18_p1" not in st.session_state:
@@ -59,7 +59,7 @@ if st.session_state["Q6_p1"] == 3:
     st.write("오답입니다. 자연수의 나눗셈에도 어려움이 있거나 계산 실수가 있는 것 같네요. 더 연습해봅시다.")
 
 Q6_Text_p2 = f'연습 6-2. {st.session_state["a6_p2"]} \u00F7 {st.session_state["b6_p2"]} ='
-st.title(Q6_Text_p2)
+st.subheader(Q6_Text_p2)
 answer1_p2 = st.number_input("답 : ", key="1_p2", value=None, placeholder="답을 입력하세요.", format="%f")
 
 if "B18_p2" not in st.session_state:

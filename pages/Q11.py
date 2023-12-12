@@ -3,7 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 import pandas as pd
 
 Q11_Text = f'11. {st.session_state["a11"]} \u00F7 {st.session_state["b11"]}의 {st.session_state["y11"]}하시오.'
-st.title(Q11_Text)
+st.subheader(Q11_Text)
 answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
 
 if "N11" not in st.session_state:
