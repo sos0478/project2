@@ -10,7 +10,7 @@ Q1_S = Q1.sample(6, replace=False)
 st.session_state["a1"] = Q1_S.iat[0, 1]
 st.session_state["b1"] = Q1_S.iat[0, 2]
 st.session_state["x1"] = Q1_S.iat[0, 3]
-st.dataframe(Q1_S)
+
 Q2 = question_data.iloc[6:12,:6]
 Q2_S = Q2.sample(6, replace=False)
 st.session_state["a2"] = Q2_S.iat[0, 1]
