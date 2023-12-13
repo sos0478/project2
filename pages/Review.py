@@ -15,7 +15,7 @@ fm._load_fontmanager(try_read_cache=False)
 plt.rc('font', family='NanumSquareRound')
 mpl.rcParams['axes.unicode_minus'] = False
 
-
+st.session_state["send"] = st.session_state["send"] + 1
 st.header("6학년 2학기 소수의 나눗셈 맞춤형 단원 평가 결과 분석")
 
 
@@ -391,4 +391,6 @@ gc = gspread.service_account_from_dict(credentials)
 doc = gc.open_by_key('12WjgwKyN8vis5Vzpmp4a3HqcvtmIu6C0pg0dRW8UOm4')
 name = st.session_state["name"]
 new_sheet = doc.add_worksheet(title = name, rows=24, cols=3)
-new_sheet.update([g_df.columns.values.tolist()]+g_df.values.tolist())
+
+if st.session_state["send"] == 1: 
+    new_sheet.update([g_df.columns.values.tolist()]+g_df.values.tolist())
