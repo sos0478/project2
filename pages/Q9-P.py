@@ -19,6 +19,8 @@ def make2():
 
 st.write("이번 문제는 객관식이라 계산 실수 체크를 하지 않으니 주의해주세요.")
 if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state["B29_p1"]):
+    if answer1 == None:
+        answer1 = 0
     if float(answer1) == float(st.session_state["x9_p1"]):
         st.write("정답입니다.")
     else:
@@ -35,6 +37,8 @@ if st.session_state["Q9_p1"] == 2:
     st.markdown(Q9_easy_Text)
     answer2 = st.radio("답 : ", [st.session_state["y9-1_p1"], st.session_state["y9-2_p1"], int(st.session_state["y9-3_p1"])], key="2")
     if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B30_p1"]):     
+        if answer2 == None:
+            answer2 = 0
         if float(answer2) == float(st.session_state["x9_p1"]):
             st.write("정답입니다. 이렇게 계산하기 쉬운 자연수로 바꿔서 대략적으로 가까운 답만 골라서 계산하면 된답니다.")
         else:
@@ -59,6 +63,8 @@ def make2_p2():
 
 st.write("이번 문제는 객관식이라 계산 실수 체크를 하지 않으니 주의해주세요.")
 if st.button("채점하기", key="a_p2", on_click=make1_p2, disabled=st.session_state["B29_p2"]):
+    if answer1_p2 == None:
+        answer1_p2 = 0
     if float(answer1_p2) == float(st.session_state["x9_p2"]):
         st.write("정답입니다.")
     else:
@@ -75,6 +81,8 @@ if st.session_state["Q9_p2"] == 2:
     st.markdown(Q9_easy_Text_p2)
     answer2_p2 = st.radio("답 : ", [st.session_state["y9-1_p2"], st.session_state["y9-2_p1"], int(st.session_state["y9-3_p2"])], key="2_p2")
     if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B30_p1"]):     
+        if answer2_p2 == None:
+            answer2_p2 = 0
         if float(answer2_p2) == float(st.session_state["x9_p2"]):
             st.write("정답입니다. 이렇게 계산하기 쉬운 자연수로 바꿔서 대략적으로 가까운 답만 골라서 계산하면 된답니다.")
         else:

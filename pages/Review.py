@@ -5,6 +5,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import os
 import matplotlib.font_manager as fm
+import gspread
 
 font_dirs = [os.getcwd() + '/customFonts']
 font_files = fm.findSystemFonts(fontpaths=font_dirs)
@@ -230,7 +231,7 @@ df_type_Q = pd.DataFrame(project_type_Q)
 df_type_Q = df_type_Q.set_index('문제 번호')
 
 recommend_Q_list = df[(df['맞춘 문제'] == df['맞춘 문제'].min()) & (df['오답 유형 번호'] != 1)].index.tolist()
-type_list = df_type[df_type['오답 수'] == df_type['오답 수'].max()].index.tolist()
+type_list = df_type[(df_type['오답 수'] == df_type['오답 수'].max()) & (df_type['오답 수'] != 0)].index.tolist()
 
 
 x1 = 14
@@ -300,7 +301,11 @@ st.subheader("분석 결과 요약")
 st.write("총 14문제 중에서 ", Q_score.count(1), "문제를 맞혔습니다.")
 st.write("또한 고난도 문제 6문제 중에서 ", Q_score_up.count(1), "문제를 맞혔습니다.")
 st.write("계산 실수를 제외하면 ", ', '.join(recommend_Q_list), " 문제를 틀렸습니다.")
-st.write("가장 많은 오답 유형은 ", ', '.join(type_list), "입니다.")
+
+if type_list == []:
+    st.write("오답이 없어 오답 유형이 존재하지 않습니다.")
+else :
+    st.write("가장 많은 오답 유형은 ", ', '.join(type_list), "입니다.")
 
 st.session_state["R_Q_list"] = recommend_Q_list
 practice = st.selectbox('틀린 문제 중에서 연습하고 싶은 문제를 골라주세요.', st.session_state["R_Q_list"])
@@ -350,3 +355,34 @@ if st.button('고난도 문제로 이동하기'):
         switch_page("Q12-UP-P")
     elif practice_up == "고난도 6번":
         switch_page("Q14-UP-P")
+
+info = ['맞춘 문제 수', '맞춘 고난도 문제 수', '최다 오답 유형']
+info_score = [Q_score.count(1), Q_score_up.count(1), ', '.join(type_list)]
+
+Q_list_sum = Q_list + Q_list_up + info
+Q_score_sum = Q_score + Q_score_up + info_score
+Q_type_sum = Q_type_text + [None, None, None, None, None, None, None, None, None]
+
+google_sheet = {'문제 번호' : Q_list_sum, '맞춘 문제' : Q_score_sum, '오답 유형' : Q_type_sum}
+g_df = pd.DataFrame(google_sheet)
+
+
+credentials = {
+    "type": "service_account",
+    "project_id": "project-408011",
+    "private_key_id": "50384da5e2a15451378e8fb9d6cf203e5fcf1920",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDGVknrPae17tcq\nkjJQPD71rcNYkUC+BdZwSeRSGESm+nPwjcZWM7WN98PmAsOzvrvbGOixfuuZHkqL\nZcZdzjIA9ZeIR+GXPtxP4Mku/ssbOMqN6CA6MBR9u3qaRPh7OVYR3s7BR07bBC65\nJqFDvS8h2VIfLaMfdiDBkO4bM3X6n2GIiCHbGTR92x28uUsCviGTmYM95zheuQPo\nKMfeePDRej6FjxkD0h27WWtj4m6dPDUf02NXctHamVNYcpHvki2/aGnc+4BSqFke\nfnG57TeuTxhByicOb0sfI9pQeN7VBz7CQYaONRhf1isPUQka0S2u7/DeTNomi7xv\nI0IERitZAgMBAAECggEAE/GmG/i+kjO+0PXzx3/xZE7JcZDkod8QJ8k0Y4FzeNd/\nPFmjT7SCLZEUMr9FKuBTf1YHQx70RbjHLfKJYpIrEs/fYZm50HXGnWUpEdfW+Gkq\n7B9jCzrduqF1NAlas7hppGEjaQnYvvsSEDX3WiqOUGDsKjyydiXQqCpA2T0g4FdE\nNhhG6JGOelIxPmbznsmddPdFpzjSDsTaX+70wcFoTgOloPWciYzStdqS63ZjonP9\nBzajIdLZEjhvty/Zp8OI4Vg+0KbsCMeLTlxhIFaIMcX7MFESno57k/Y1AoXhlkn6\n+VZs9ZAPFGAuBdo+5kIuEKjtooEpsj2O/Kj41W/+8QKBgQD7e9uokTm1VmlBNfZG\npO2nKImOo7aOlFgGs90ZVISha+SJa+vGivYcgHtoSMp5TBswXpBWpyyxZY19NFMI\nUXewids5GnBAafYCsR/Bm3Gg61A6b8bLFcAvNR9VUMEPYexNzxwtg79DzFHhti1x\nTXIl2+UCIjpDfbHdzdqfvr0oMQKBgQDJ5hmgRYxEcDEeAKXpK3mySkltqUcmKYkd\nw/lhD+EWt/vgZkvMIapOSKk9KiTlI4nV5Npdl3xxQ5IZt/ku6t7Pqh0gzFflz/pS\nHndoues8ZN/l4keJVqnAtfK1sXFUaHQ2szMWeA8HU4NC019CptF+B36pq0jQiL6h\nOHbYplsTqQKBgQDsojAfnn9BrYye6srQ0HI6/v7otA2cfeOScv5RzmB6j85crKsP\niERqr07v4sZ6em1/BwwkLWv1hIwtSuXyhs3r1NvuEH2dbtco00gBYmX6OFGmmvTg\ntZfAE+lm2vS+p7K1yHNINJbtkb1eeJCr82a8TvxfFJvkU8rg3cmg1NaikQKBgQDC\nYpHlp1BHTCVeF42lk0AWEkPkGwjviyoCyH4/n0Q91WHiSVtM7FTGDlszEnJ3UuIQ\nV8iON52Oh1oQ/Poi2+st0UE+JL+z+auuiLq6z9XWTeDruhLZ/eBuND+8A11zwSWy\nzJGxXmJJ0XQdUNj0mRw11Q10Wf8/F4lCO9Tg/jnOEQKBgQCYNp3w2kyTnLZHB8cf\nDF14WYZgJEIjl0+hEmwsLBjPYR3iPBi0ejvpGJCPmoe05brUFHzFtxWskPlW7Yfk\n+SMQSM6QSlkC8qMIpsWgbD+nDBp+e6+mzo69/ufAa5yS0fQoH9z4It22vFUF4QAJ\nT9YMEy3P8ub/jctoW31aB1txTQ==\n-----END PRIVATE KEY-----\n",
+    "client_email": "project@project-408011.iam.gserviceaccount.com",
+    "client_id": "109610279499970516707",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/project%40project-408011.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+}
+
+gc = gspread.service_account_from_dict(credentials)
+doc = gc.open_by_key('12WjgwKyN8vis5Vzpmp4a3HqcvtmIu6C0pg0dRW8UOm4')
+name = st.session_state["name"]
+new_sheet = doc.add_worksheet(title = name, rows=24, cols=3)
+new_sheet.update([g_df.columns.values.tolist()]+g_df.values.tolist())

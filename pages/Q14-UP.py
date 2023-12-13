@@ -23,6 +23,8 @@ def make1():
 
 st.write("고난도 문제는 채점 기회가 1번 뿐이니 신중하게 눌러주세요.")
 if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state["B58"]):
+    if answer1 == None:
+        answer1 = 0
     if float(answer1) == float(st.session_state["x14_up"]):
         st.session_state["UP6"] = st.session_state["UP6"] + 1
         st.session_state["N14_UP"] = False
@@ -35,6 +37,6 @@ if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state[
         st.session_state["N14_UP"] = False
 
 
-st.write("이번 문제가 마지막이므로 채점을 마친 후에만 클릭하여 결과 분석으로 넘어갈 수 있습니다.")
+st.write("이번 문제가 마지막이므로 채점을 마친 후에만 클릭하여 결과 분석으로 넘어갈 수 있습니다. 버튼을 누르면 채점 결과는 선생님에게 전송됩니다.")
 if st.button("결과 분석으로 넘어가기", disabled=st.session_state["N14_UP"]):
     switch_page("Review")

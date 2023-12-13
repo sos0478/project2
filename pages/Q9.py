@@ -22,6 +22,8 @@ def make2():
 
 st.write("이번 문제는 객관식이라 계산 실수 체크를 하지 않으니 주의해주세요.")
 if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state["B29"]):
+    if answer1 == None:
+        answer1 = 0
     if float(answer1) == float(st.session_state["x9"]):
         st.session_state["C9"] = st.session_state["C9"] + 1
         st.session_state["N9"] = False
@@ -40,6 +42,8 @@ if st.session_state["Q9"] == 2:
     st.markdown(Q9_easy_Text)
     answer2 = st.radio("답 : ", [st.session_state["y9-1"], st.session_state["y9-2"], int(st.session_state["y9-3"])], key="2")
     if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B30"]):     
+        if answer2 == None:
+            answer2 = 0
         if float(answer2) == float(st.session_state["x9"]):
             st.session_state["C9"] = st.session_state["C9"] + 1
             st.session_state["N9"] = False

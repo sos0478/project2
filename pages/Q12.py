@@ -48,6 +48,8 @@ elif st.session_state['y12_2'] == "소수 둘째 자리":
 
 
 if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state["B39"]):
+    if answer1 == None:
+        answer1 = 0
     if float(answer1) == float(st.session_state["x12"]):
         st.session_state["C12"] = st.session_state["C12"] + 1
         st.session_state["N12"] = False
@@ -59,7 +61,9 @@ if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state[
 if st.session_state["Q12"] == 1:
     st.write("혹시 계산 실수가 있었나요? 반올림을 해야 한다는 것을 생각하고 다시 답을 입력해주세요.")
     answer2 = st.number_input("답 : ", key="2", value=None, placeholder="답을 입력하세요.", format="%f")
-    if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B40"]):     
+    if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B40"]):
+        if answer2 == None:
+            answer2 = 0     
         if float(answer2) == float(st.session_state["x12"]):
             st.session_state["C12"] = st.session_state["C12"] + 1
             st.session_state["N12"] = False
@@ -77,6 +81,8 @@ if st.session_state["Q12"] == 2.1:
     right_answer = float(st.session_state['a12']/st.session_state['b12'])
     right_answer = f"{right_answer:.{st.session_state['round_q2']}f}"
     if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B41"]): 
+        if answer3 == None:
+            answer3 = 0
         if float(answer3) == float(right_answer):
             st.write("정답입니다.")
             st.session_state["Q12"] = st.session_state["Q12"] + 0.4
@@ -89,6 +95,8 @@ if st.session_state["Q12"] == 2.5:
     st.write("방금 입력한 ", right_answer, "를 ", st.session_state['y12_2'], "에서 반올림한 값을 입력해봅시다.")
     answer4 = st.number_input("답 : ", key="4", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="d", on_click=make4, disabled=st.session_state["B42"]): 
+        if answer4 == None:
+            answer4 = 0
         if float(answer4) == float(st.session_state["x12"]):
             st.session_state["N12"] = False
             st.write("정답입니다. 소수의 나눗셈에서 몫을 구하고 반올림을 할 수 있는데 2번이나 답을 틀린 것을 보니 반올림을 잘못 이해했거나 실수를 많이 한 것 같네요. 다음부터는 집중하여 문제를 풀도록 합시다.")
@@ -114,6 +122,8 @@ if st.session_state["Q12"] == 3.1:
     st.markdown(Q12_easy_Text_2)
     answer5 = st.number_input("답 : ", key="5", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="e", on_click=make5, disabled=st.session_state["B43"]): 
+        if answer5 == None:
+            answer5 = 0
         if float(answer5) == float(right_answer):
             st.write("정답입니다.")
             st.session_state["Q12"] = st.session_state["Q12"] + 0.4
@@ -125,6 +135,8 @@ if st.session_state["Q12"] == 3.5:
     st.write("방금 입력한 ", right_answer, "를 ", st.session_state['y12_2'], "에서 반올림한 값을 입력해봅시다.")
     answer6 = st.number_input("답 : ", key="6", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="f", on_click=make6, disabled=st.session_state["B44"]): 
+        if answer6 == None:
+            answer6 = 0
         if float(answer6) == float(st.session_state["x12"]):
             st.session_state["N12"] = False
             st.write("정답입니다. 소수의 나눗셈에는 어려움이 있었지만 반올림에는 문제가 없었군요. 다음에는 자연수로 바꿔서 신중하게 계산해봅시다.")

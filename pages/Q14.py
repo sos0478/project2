@@ -40,6 +40,8 @@ def make6():
 
 
 if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state["B52"]):
+    if answer1 == None:
+        answer1 = 0
     if float(answer1) == float(st.session_state["x14"]):
         st.session_state["C14"] = st.session_state["C14"] + 1
         st.session_state["N14"] = False
@@ -52,6 +54,8 @@ if st.session_state["Q14"] == 1:
     st.write("혹시 계산 실수가 있었나요? 몫이 아니라 나머지를 구해야 한다는 것을 생각하고 다시 답을 입력해주세요.")
     answer2 = st.number_input("답 : ", key="2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B53"]):     
+        if answer2 == None:
+            answer2 = 0
         if float(answer2) == float(st.session_state["x14"]):
             st.session_state["C14"] = st.session_state["C14"] + 1
             st.session_state["N14"] = False
@@ -69,6 +73,8 @@ if st.session_state["Q14"] == 2.1:
     answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
     right_answer = st.session_state["y14_2"]
     if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B54"]): 
+        if answer3 == None:
+            answer3 = 0
         if int(answer3) == int(right_answer):
             st.write("정답입니다.")
             st.session_state["Q14"] = st.session_state["Q14"] + 0.4
@@ -82,6 +88,8 @@ if st.session_state["Q14"] == 2.5:
     st.write(Q14_Text)
     answer4 = st.number_input("답 : ", key="4", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="d", on_click=make4, disabled=st.session_state["B55"]): 
+        if answer4 == None:
+            answer4 = 0
         if float(answer4) == float(st.session_state["x14"]):
             st.session_state["N14"] = False
             st.write("정답입니다. 나머지는 이렇게 자연수 부분까지 몫을 구한 후 나누는 수에 곱해서 나누어지는 수에서 빼는 식으로 구할 수 있습니다.")
@@ -110,6 +118,8 @@ if st.session_state["Q14"] == 3.1:
     st.markdown(Q14_easy_Text_2)
     answer5 = st.number_input("답 : ", key="5", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="e", on_click=make5, disabled=st.session_state["B56"]): 
+        if answer5 == None:
+            answer5 = 0
         if int(answer5) == int(right_answer):
             st.write("정답입니다.")
             st.session_state["Q14"] = st.session_state["Q14"] + 0.4
@@ -122,6 +132,8 @@ if st.session_state["Q14"] == 3.5:
     st.write(Q14_Text)
     answer6 = st.number_input("답 : ", key="6", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="f", on_click=make6, disabled=st.session_state["B57"]): 
+        if answer6 == None:
+            answer6 = 0
         if float(answer6) == float(st.session_state["x14"]):
             st.session_state["N14"] = False
             st.write("정답입니다. 나머지는 이렇게 자연수 부분까지 몫을 구한 후 나누는 수에 곱해서 나누어지는 수에서 빼는 식으로 구할 수 있습니다.")
@@ -146,7 +158,7 @@ if st.session_state["Q14"] == 4:
     st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 잘 몰랐는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
 
-st.write("이번 문제가 마지막이므로 채점을 마친 후에만 클릭하여 결과 분석으로 넘어갈 수 있습니다.")
+st.write("이번 문제가 마지막이므로 채점을 마친 후에만 클릭하여 결과 분석으로 넘어갈 수 있습니다. 버튼을 누르면 채점 결과는 선생님에게 전송됩니다.")
 if st.button("결과 분석으로 넘어가기", disabled=st.session_state["N14"]):
     switch_page("Review")
 

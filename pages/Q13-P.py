@@ -35,6 +35,8 @@ def make6():
 
 
 if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state["B46_p1"]):
+    if answer1 == None:
+        answer1 = 0
     if float(answer1) == float(st.session_state["x13_p1"]):
         st.write("정답입니다.")
     else:
@@ -44,7 +46,9 @@ if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state[
 if st.session_state["Q13_p1"] == 1:
     st.write("혹시 계산 실수가 있었나요? 몫이 아니라 나머지를 구해야 한다는 것을 생각하고 다시 답을 입력해주세요.")
     answer2 = st.number_input("답 : ", key="2", value=None, placeholder="답을 입력하세요.", format="%f")
-    if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B47_p1"]):     
+    if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B47_p1"]):    
+        if answer2 == None:
+            answer2 = 0 
         if float(answer2) == float(st.session_state["x13_p1"]):
             st.write("정답입니다.")
         else:
@@ -60,6 +64,8 @@ if st.session_state["Q13_p1"] == 2.1:
     answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
     right_answer = st.session_state["y13_2_p1"]
     if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B48_p1"]): 
+        if answer3 == None:
+            answer3 = 0
         if int(answer3) == int(right_answer):
             st.write("정답입니다.")
             st.session_state["Q13_p1"] = st.session_state["Q13_p1"] + 0.4
@@ -73,6 +79,8 @@ if st.session_state["Q13_p1"] == 2.5:
     st.write(Q13_Text)
     answer4 = st.number_input("답 : ", key="4", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="d", on_click=make4, disabled=st.session_state["B49_p1"]): 
+        if answer4 == None:
+            answer4 = 0
         if float(answer4) == float(st.session_state["x13_p1"]):
             st.write("정답입니다. 나머지는 이렇게 자연수 부분까지 몫을 구한 후 나누는 수에 곱해서 나누어지는 수에서 빼는 식으로 구할 수 있습니다.")
             st.write("하지만 더 쉬운 방법으로는 자연수 부분까지 몫을 구하는 과정을 세로셈으로 똑같이 한 후, 나누어지는 수의 소수점을 그대로 내려서 구한 나머지에 소수점을 찍어도 됩니다.")
@@ -99,6 +107,8 @@ if st.session_state["Q13_p1"] == 3.1:
     st.markdown(Q13_easy_Text_2)
     answer5 = st.number_input("답 : ", key="5", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="e", on_click=make5, disabled=st.session_state["B50_p1"]): 
+        if answer5 == None:
+            answer5 = 0
         if int(answer5) == int(right_answer):
             st.write("정답입니다.")
             st.session_state["Q13_p1"] = st.session_state["Q13_p1"] + 0.4
@@ -111,6 +121,8 @@ if st.session_state["Q13_p1"] == 3.5:
     st.write(Q13_Text)
     answer6 = st.number_input("답 : ", key="6", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="f", on_click=make6, disabled=st.session_state["B51_p1"]): 
+        if answer6 == None:
+            answer6 = 0
         if float(answer6) == float(st.session_state["x13_p1"]):
             st.write("정답입니다. 나머지는 이렇게 자연수 부분까지 몫을 구한 후 나누는 수에 곱해서 나누어지는 수에서 빼는 식으로 구할 수 있습니다.")
             st.write("하지만 더 쉬운 방법으로는 자연수 부분까지 몫을 구하는 과정을 세로셈으로 똑같이 한 후, 나누어지는 수의 소수점을 그대로 내려서 구한 나머지에 소수점을 찍어도 됩니다.")
@@ -165,6 +177,8 @@ def make6_p2():
 
 
 if st.button("채점하기", key="a_p2", on_click=make1_p2, disabled=st.session_state["B46_p2"]):
+    if answer1_p2 == None:
+        answer1_p2 = 0
     if float(answer1_p2) == float(st.session_state["x13_p2"]):
         st.write("정답입니다.")
     else:
@@ -174,7 +188,9 @@ if st.button("채점하기", key="a_p2", on_click=make1_p2, disabled=st.session_
 if st.session_state["Q13_p2"] == 1:
     st.write("혹시 계산 실수가 있었나요? 몫이 아니라 나머지를 구해야 한다는 것을 생각하고 다시 답을 입력해주세요.")
     answer2_p2 = st.number_input("답 : ", key="2_p2", value=None, placeholder="답을 입력하세요.", format="%f")
-    if st.button("채점하기", key="b_p2", on_click=make2_p2, disabled=st.session_state["B47_p2"]):     
+    if st.button("채점하기", key="b_p2", on_click=make2_p2, disabled=st.session_state["B47_p2"]):    
+        if answer2_p2 == None:
+            answer2_p2 = 0 
         if float(answer2_p2) == float(st.session_state["x13_p2"]):
             st.write("정답입니다.")
         else:
@@ -190,6 +206,8 @@ if st.session_state["Q13_p2"] == 2.1:
     answer3_p2 = st.number_input("답 : ", key="3_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     right_answer_p2 = st.session_state["y13_2_p2"]
     if st.button("채점하기", key="c_p2", on_click=make3_p2, disabled=st.session_state["B48_p2"]): 
+        if answer3_p2 == None:
+            answer3_p2 = 0
         if int(answer3_p2) == int(right_answer_p2):
             st.write("정답입니다.")
             st.session_state["Q13_p2"] = st.session_state["Q13_p2"] + 0.4
@@ -203,6 +221,8 @@ if st.session_state["Q13_p2"] == 2.5:
     st.write(Q13_Text_p2)
     answer4_p2 = st.number_input("답 : ", key="4_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="d_p2", on_click=make4_p2, disabled=st.session_state["B49_p1"]): 
+        if answer4_p2 == None:
+            answer4_p2 = 0
         if float(answer4_p2) == float(st.session_state["x13_p2"]):
             st.write("정답입니다. 나머지는 이렇게 자연수 부분까지 몫을 구한 후 나누는 수에 곱해서 나누어지는 수에서 빼는 식으로 구할 수 있습니다.")
             st.write("하지만 더 쉬운 방법으로는 자연수 부분까지 몫을 구하는 과정을 세로셈으로 똑같이 한 후, 나누어지는 수의 소수점을 그대로 내려서 구한 나머지에 소수점을 찍어도 됩니다.")
@@ -229,6 +249,8 @@ if st.session_state["Q13_p2"] == 3.1:
     st.markdown(Q13_easy_Text_2_p2)
     answer5_p2 = st.number_input("답 : ", key="5_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="e_p2", on_click=make5_p2, disabled=st.session_state["B50_p2"]): 
+        if answer5_p2 == None:
+            answer5_p2 = 0
         if int(answer5_p2) == int(right_answer_p2):
             st.write("정답입니다.")
             st.session_state["Q13_p2"] = st.session_state["Q13_p2"] + 0.4
@@ -241,6 +263,8 @@ if st.session_state["Q13_p2"] == 3.5:
     st.write(Q13_Text_p2)
     answer6_p2 = st.number_input("답 : ", key="6_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="f_p2", on_click=make6_p2, disabled=st.session_state["B51_p2"]): 
+        if answer6_p2 == None:
+            answer6_p2 = 0
         if float(answer6_p2) == float(st.session_state["x13_p2"]):
             st.write("정답입니다. 나머지는 이렇게 자연수 부분까지 몫을 구한 후 나누는 수에 곱해서 나누어지는 수에서 빼는 식으로 구할 수 있습니다.")
             st.write("하지만 더 쉬운 방법으로는 자연수 부분까지 몫을 구하는 과정을 세로셈으로 똑같이 한 후, 나누어지는 수의 소수점을 그대로 내려서 구한 나머지에 소수점을 찍어도 됩니다.")

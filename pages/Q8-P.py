@@ -21,6 +21,8 @@ def make3():
     st.session_state["B27_p1"] = True
 
 if st.button("채점하기", key="a", on_click=make1, disabled=st.session_state["B25_p1"]):
+    if answer1 == None:
+        answer1 = 0
     if float(answer1) == float(st.session_state["x8_p1"]):
         st.write("정답입니다.")
     else:
@@ -30,6 +32,8 @@ if st.session_state["Q8_p1"] == 1:
     st.write("혹시 계산 실수가 있었나요? 천천히 계산해보고 다시 답을 입력해주세요.")
     answer2 = st.number_input("답 : ", key="2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="b", on_click=make2, disabled=st.session_state["B26_p1"]):     
+        if answer2 == None:
+            answer2 = 0
         if float(answer2) == float(st.session_state["x8_p1"]):
             st.write("정답입니다.")
         else:
@@ -49,7 +53,9 @@ if st.session_state["Q8_p1"] == 2:
     Q8_easy_Text = f"연습 8-1. {a8} \u00F7 {b8} ="
     st.markdown(Q8_easy_Text)
     answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
-    if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B27_p1"]): 
+    if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B27_p1"]):
+        if answer3 == None:
+            answer3 = 0 
         if float(answer3) == float(st.session_state["x8_p1"]):
             st.write("정답입니다. 처음 문제를 방금 푼 자연수끼리의 나눗셈으로 바꾸듯이 자연수를 소수로 나누는 나눗셈은 자연수와 소수를 모두 소수점 이동하여 자연수끼리의 나눗셈으로 만들어 풀면 됩니다.")
         else:
@@ -79,6 +85,8 @@ def make3_p2():
     st.session_state["B27_p2"] = True
 
 if st.button("채점하기", key="a_p2", on_click=make1_p2, disabled=st.session_state["B25_p2"]):
+    if answer1_p2 == None:
+        answer1_p2 = 0
     if float(answer1_p2) == float(st.session_state["x8_p2"]):
         st.write("정답입니다.")
     else:
@@ -87,7 +95,9 @@ if st.button("채점하기", key="a_p2", on_click=make1_p2, disabled=st.session_
 if st.session_state["Q8_p2"] == 1:
     st.write("혹시 계산 실수가 있었나요? 천천히 계산해보고 다시 답을 입력해주세요.")
     answer2_p2 = st.number_input("답 : ", key="2_p2", value=None, placeholder="답을 입력하세요.", format="%f")
-    if st.button("채점하기", key="b_p2", on_click=make2_p2, disabled=st.session_state["B26_p2"]):     
+    if st.button("채점하기", key="b_p2", on_click=make2_p2, disabled=st.session_state["B26_p2"]):   
+        if answer2_p2 == None:
+            answer2_p2 = 0  
         if float(answer2_p2) == float(st.session_state["x8_p2"]):
             st.write("정답입니다.")
         else:
@@ -108,6 +118,8 @@ if st.session_state["Q8_p2"] == 2:
     st.markdown(Q8_easy_Text_p2)
     answer3_p2 = st.number_input("답 : ", key="3_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="c_p2", on_click=make3_p2, disabled=st.session_state["B27_p2"]): 
+        if answer3_p2 == None:
+            answer3_p2 = 0
         if float(answer3_p2) == float(st.session_state["x8_p2"]):
             st.write("정답입니다. 처음 문제를 방금 푼 자연수끼리의 나눗셈으로 바꾸듯이 자연수를 소수로 나누는 나눗셈은 자연수와 소수를 모두 소수점 이동하여 자연수끼리의 나눗셈으로 만들어 풀면 됩니다.")
         else:
