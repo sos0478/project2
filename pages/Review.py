@@ -390,7 +390,8 @@ credentials = {
 gc = gspread.service_account_from_dict(credentials)
 doc = gc.open_by_key('12WjgwKyN8vis5Vzpmp4a3HqcvtmIu6C0pg0dRW8UOm4')
 name = st.session_state["name"]
-new_sheet = doc.add_worksheet(title = name, rows=24, cols=3)
+
 
 if st.session_state["send"] == 1: 
+    new_sheet = doc.add_worksheet(title = name, rows=24, cols=3)
     new_sheet.update([g_df.columns.values.tolist()]+g_df.values.tolist())
