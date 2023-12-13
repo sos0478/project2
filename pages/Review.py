@@ -357,7 +357,9 @@ if st.button('고난도 문제로 이동하기'):
         switch_page("Q14-UP-P")
 
 info = ['맞춘 문제 수', '맞춘 고난도 문제 수', '최다 오답 유형']
-info_score = [Q_score.count(1), Q_score_up.count(1), ', '.join(type_list)]
+score_sum = str(Q_score.count(1)) + "/14"
+score_sum_up = str(Q_score_up.count(1)) + "/6"
+info_score = [score_sum, score_sum_up, ', '.join(type_list)]
 
 Q_list_sum = Q_list + Q_list_up + info
 Q_score_sum = Q_score + Q_score_up + info_score
