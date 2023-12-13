@@ -356,6 +356,10 @@ if st.button('고난도 문제로 이동하기'):
     elif practice_up == "고난도 6번":
         switch_page("Q14-UP-P")
 
+st.write("고난도 문제를 모두 풀어본 학생은 소수의 나눗셈과 관련된 문제를 직접 만들어서 답과 함께 제출해봅시다.")
+if st.button('문제 만들기로 이동하기'):
+    switch_page("Make")
+
 info = ['맞춘 문제 수', '맞춘 고난도 문제 수', '최다 오답 유형']
 score_sum = str(Q_score.count(1)) + "/14"
 score_sum_up = str(Q_score_up.count(1)) + "/6"
