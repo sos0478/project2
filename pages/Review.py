@@ -15,6 +15,9 @@ fm._load_fontmanager(try_read_cache=False)
 plt.rc('font', family='NanumSquareRound')
 mpl.rcParams['axes.unicode_minus'] = False
 
+if "send" not in st.session_state:
+    st.session_state["send"] = 0
+
 st.session_state["send"] = st.session_state["send"] + 1
 st.header("6학년 2학기 소수의 나눗셈 맞춤형 단원 평가 결과 분석")
 
