@@ -186,6 +186,7 @@ st.session_state["y14_up_2_p"] = Q14_S.iat[3, 5]
 st.header("6학년 2학기 소수의 나눗셈 맞춤형 단원 평가")
 st.write("문제를 맞힐수록 조금 더 어려운 문제가, 문제를 틀릴수록 조금 더 쉬운 문제가 제공됩니다.")
 st.write("나중에 자신의 약점을 그래프로 확인할 수 있고, 약점 연습 문제를 풀어볼 수 있습니다.")
+st.session_state["name"] = st.text_input('이름을 입력하세요.', '이름', max_chars=5)
 if st.button("평가 시작하기"):
     switch_page("Q1")
 
