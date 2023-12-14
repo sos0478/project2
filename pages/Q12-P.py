@@ -230,7 +230,7 @@ if st.session_state["Q12_p2"] == 2.1:
     answer3_p2 = st.number_input("답 : ", key="3_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     st.session_state['right_answer6'] = float(st.session_state['a12_p2']/st.session_state['b12_p2'])
     st.session_state['right_answer6'] = f"{st.session_state['right_answer6']:.{st.session_state['round_q2_p2']}f}"
-    if st.button("채점하기", key="c_p2", on_click=make3_p2, disabled=st.session_state["B41_p1_p2"]): 
+    if st.button("채점하기", key="c_p2", on_click=make3_p2, disabled=st.session_state["B41_p2"]): 
         if answer3_p2 == None:
             answer3_p2 = 0
         if float(answer3_p2) == float(st.session_state['right_answer6']):
