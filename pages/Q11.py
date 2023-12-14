@@ -122,7 +122,7 @@ if st.session_state["Q11"] == 3.1:
     if st.button("채점하기", key="e", on_click=make5, disabled=st.session_state["B37"]): 
         if answer5 == None:
             answer5 = 0
-        if float(answer5) == float(right_answer):
+        if float(answer5) == float(st.session_state['a11']/st.session_state['b11']):
             st.write("정답입니다.")
             st.session_state["Q11"] = st.session_state["Q11"] + 0.4
         else:
