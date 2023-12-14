@@ -146,7 +146,7 @@ st.session_state["b14_up"] = Q14_S.iat[1, 2]
 st.session_state["x14_up"] = Q14_S.iat[1, 3]
 st.session_state["y14_up"] = Q14_S.iat[1, 4]
 st.session_state["y14_up_2"] = Q14_S.iat[1, 5]
-
+st.dataframe(Q14_UP)
 
 st.session_state["Q2_UP_p"] = Q2_UP.iat[5, 1]
 st.session_state["a2_up_p"] = Q2_S.iat[4, 1]
