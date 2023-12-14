@@ -146,7 +146,7 @@ if st.session_state["Q11"] == 3.5:
             st.session_state["N11"] = False
             st.write("오답입니다. 소수의 나눗셈과 반올림에 모두 어려움이 있었군요.")
             st.write("그래도 반올림에 대해서는 다시 설명하겠습니다.")
-            st.write(st.session_state['right_answer1']), "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
+            st.write(st.session_state['right_answer1'], "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
             st.write("자신이 입력한 값과 비교해보면서 어떤 실수를 했는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
 if st.session_state["Q11"] == 4:
