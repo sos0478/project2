@@ -122,7 +122,7 @@ if st.session_state["Q11"] == 3.1:
     st.write("지금 문제는 나누는 수와 나누어지는 수에 똑같이 10을 곱해주면 되겠네요.")
     st.write("그렇게 되면 ", st.session_state["a11"], "이 ", st.session_state["a11__"], "로 바뀌게 되고,")
     st.write(st.session_state["b11"], "이 ", st.session_state["b11__"], "로 바뀌게 됩니다.")
-    st.write("그렇다면 자연수의 나눗셈으로 바꾼 후 몫을", st.session_state['y11_2'], "까지 구한 후 답을 입력해봅시다.")
+    st.write("그렇다면 자연수의 나눗셈으로 바꾼 후 몫을", st.session_state['y11_2'], "까지만 구한 후 답을 입력해봅시다.")
     Q11_easy_Text_2 = f"11. {st.session_state['a11__']} \u00F7 {st.session_state['b11__']}의 몫을 {st.session_state['y11_2']}까지만 구하시오."
     st.markdown(Q11_easy_Text_2)
     answer5 = st.number_input("답 : ", key="5", value=None, placeholder="답을 입력하세요.", format="%f")
