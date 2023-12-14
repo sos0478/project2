@@ -83,8 +83,8 @@ if st.session_state["Q12"] == 1:
 
 if st.session_state["Q12"] == 2.1:  
     st.write("몫을 반올림하여 구하는 데 어려움이 있는 것 같군요.")
-    st.write("우선 몫을", st.session_state['y12_2'], "까지 구한 후 답을 입력해봅시다.")
-    Q12_easy_Text = f"12. {st.session_state['a12']} \u00F7 {st.session_state['b12']}의 몫을 {st.session_state['y12_2']}까지 구해보시오."
+    st.write("우선 몫을", st.session_state['y12_2'], "까지만 구한 후 답을 입력해봅시다.")
+    Q12_easy_Text = f"12. {st.session_state['a12']} \u00F7 {st.session_state['b12']}의 몫을 {st.session_state['y12_2']}까지만 구하시오."
     st.markdown(Q12_easy_Text)
     answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
     st.session_state['right_answer4'] = float(st.session_state['a12']/st.session_state['b12'])
