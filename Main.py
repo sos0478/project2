@@ -110,8 +110,8 @@ st.session_state["y14"] = Q14_S.iat[0, 4]
 st.session_state["y14_2"] = Q14_S.iat[0, 5]
 
 
-situation_data = pd.read_excel("situation data.xlsx")
-Q2_UP = situation_data.sample(20, replace=False)
+situation_data1 = pd.read_excel("situation data1.xlsx")
+Q2_UP = situation_data1.sample(20, replace=False)
 st.session_state["Q2_UP"] = Q2_UP.iat[0, 1]
 st.session_state["a2_up"] = Q2_S.iat[1, 1]
 st.session_state["b2_up"] = Q2_S.iat[1, 2]
@@ -139,7 +139,8 @@ st.session_state["x12_up"] = Q12_S.iat[1, 3]
 st.session_state["y12_up"] = Q12_S.iat[1, 4]
 st.session_state["y12_up_2"] = Q12_S.iat[1, 5]
 
-Q14_UP = situation_data.sample(5, replace=False)
+situation_data2 = pd.read_excel("situation data2.xlsx")
+Q14_UP = situation_data2.sample(5, replace=False)
 st.session_state["Q14_UP"] = Q14_UP.iat[1, 2]
 st.session_state["a14_up"] = Q14_S.iat[1, 1]
 st.session_state["b14_up"] = Q14_S.iat[1, 2]
