@@ -6,6 +6,9 @@ Q11_Text = f'11. {st.session_state["a11"]} \u00F7 {st.session_state["b11"]}의 {
 st.subheader(Q11_Text)
 answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
 
+if "right_answer1" not in st.session_state:
+    st.session_state["right_answer1"] = 0
+
 if "N11" not in st.session_state:
     st.session_state["N11"] = True
 
@@ -76,12 +79,12 @@ if st.session_state["Q11"] == 2.1:
     Q11_easy_Text = f"11. {st.session_state['a11']} \u00F7 {st.session_state['b11']}의 몫을 {st.session_state['y11_2']}까지 구해보시오."
     st.markdown(Q11_easy_Text)
     answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
-    right_answer = float(st.session_state['a11']/st.session_state['b11'])
-    right_answer = f"{right_answer:.{st.session_state['round_q1']}f}"
+    st.session_state['right_answer1'] = float(st.session_state['a11']/st.session_state['b11'])
+    st.session_state['right_answer1'] = f"{st.session_state['right_answer1'].{st.session_state['round_q1']}f}"
     if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B35"]): 
         if answer3 == None:
             answer3 = 0
-        if float(answer3) == float(right_answer):
+        if float(answer3) == float(st.session_state['right_answer1']):
             st.write("정답입니다.")
             st.session_state["Q11"] = st.session_state["Q11"] + 0.4
         else:
@@ -102,7 +105,7 @@ if st.session_state["Q11"] == 2.5:
         else:
             st.session_state["N11"] = False
             st.write("오답입니다. 몫은 구할 수 있지만 반올림에 어려움이 있었군요.")
-            st.write(right_answer, "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
+            st.write(st.session_state['right_answer1'], "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
             st.write("자신이 입력한 값과 비교해보면서 어떤 실수를 했는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
 
@@ -122,7 +125,7 @@ if st.session_state["Q11"] == 3.1:
     if st.button("채점하기", key="e", on_click=make5, disabled=st.session_state["B37"]): 
         if answer5 == None:
             answer5 = 0
-        if float(answer5) == float(st.session_state['a11']/st.session_state['b11']):
+        if float(answer5) == float(st.session_state['right_answer1']):
             st.write("정답입니다.")
             st.session_state["Q11"] = st.session_state["Q11"] + 0.4
         else:
@@ -130,7 +133,7 @@ if st.session_state["Q11"] == 3.1:
 
 if st.session_state["Q11"] == 3.5:
     st.write("그럼 이제 구한 값을 반올림해보겠습니다. 특정 자리에서 반올림은 특정 자리가 4 이하면 버림, 5 이상이면 올림을 하면 됩니다.")
-    st.write("방금 입력한 ", right_answer, "를 ", st.session_state['y11_2'], "에서 반올림한 값을 입력해봅시다.")
+    st.write("방금 입력한 ", st.session_state['right_answer1'], "를 ", st.session_state['y11_2'], "에서 반올림한 값을 입력해봅시다.")
     answer6 = st.number_input("답 : ", key="6", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="f", on_click=make6, disabled=st.session_state["B38"]):
         if answer6 == None:
@@ -143,7 +146,7 @@ if st.session_state["Q11"] == 3.5:
             st.session_state["N11"] = False
             st.write("오답입니다. 소수의 나눗셈과 반올림에 모두 어려움이 있었군요.")
             st.write("그래도 반올림에 대해서는 다시 설명하겠습니다.")
-            st.write(float(st.session_state['a11']/st.session_state['b11']), "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
+            st.write(st.session_state['right_answer1']), "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
             st.write("자신이 입력한 값과 비교해보면서 어떤 실수를 했는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
 if st.session_state["Q11"] == 4:
@@ -151,8 +154,8 @@ if st.session_state["Q11"] == 4:
     st.write("오답입니다. 소수의 나눗셈과 반올림에 모두 어려움이 있었군요.")
     st.write("그래도 반올림에 대해서는 다시 설명하겠습니다. 특정 자리에서 반올림은 특정 자리가 4 이하면 버림, 5 이상이면 올림을 하면 됩니다.")
     st.write("위에서 풀지 못한 문제의 답을 이용해 반올림 과정을 살펴봅시다.")
-    st.write(f"{a11} \u00F7 {b11}의 {st.session_state['y11']}하면 답은 {float(st.session_state['a11']/st.session_state['b11'])}가 됩니다.")
-    st.write("이때 ", float(st.session_state['a11']/st.session_state['b11']), "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
+    st.write(f"{a11} \u00F7 {b11}의 {st.session_state['y11']}하면 답은 {st.session_state['right_answer1']}가 됩니다.")
+    st.write("이때 ", st.session_state['right_answer1'], "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
     st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 잘 몰랐는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
 
