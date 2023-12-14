@@ -226,7 +226,7 @@ if st.session_state["Q11_p2"] == 2.1:
     st.markdown(Q11_easy_Text_p2)
     answer3_p2 = st.number_input("답 : ", key="3_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     st.session_state["right_answer3"] = float(st.session_state['a11_p2']/st.session_state['b11_p2'])
-    st.session_state["right_answer3"] = f"{st.session_state["right_answer3"]:.{st.session_state['round_q1_p2']}f}"
+    st.session_state["right_answer3"] = f"{st.session_state['right_answer3']:.{st.session_state['round_q1_p2']}f}"
     if st.button("채점하기", key="c_p2", on_click=make3_p2, disabled=st.session_state["B35_p2"]): 
         if answer3_p2 == None:
             answer3_p2 = 0
