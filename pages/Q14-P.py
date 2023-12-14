@@ -57,7 +57,7 @@ if st.session_state["Q14_p1"] == 1:
         if float(answer2) == float(st.session_state["x14_p1"]):
             st.write("정답입니다.")
         else:
-            st.session_state["Q14_p1"] = st.session_state["Q14_p1"] + 1
+            st.session_state["Q14_p1"] = st.session_state["Q14_p1"] + 1.1
        
 
 if st.session_state["Q14_p1"] == 2.1:  
@@ -203,7 +203,7 @@ if st.session_state["Q14_p2"] == 1:
         if float(answer2_p2) == float(st.session_state["x14_p2"]):
             st.write("정답입니다.")
         else:
-            st.session_state["Q14_p2"] = st.session_state["Q14_p2"] + 1
+            st.session_state["Q14_p2"] = st.session_state["Q14_p2"] + 1.1
        
 
 if st.session_state["Q14_p2"] == 2.1:  
