@@ -147,7 +147,7 @@ if st.session_state["Q12_p1"] == 4:
     st.write("오답입니다. 소수의 나눗셈과 반올림에 모두 어려움이 있었군요.")
     st.write("그래도 반올림에 대해서는 다시 설명하겠습니다. 특정 자리에서 반올림은 특정 자리가 4 이하면 버림, 5 이상이면 올림을 하면 됩니다.")
     st.write("위에서 풀지 못한 문제의 답을 이용해 반올림 과정을 살펴봅시다.")
-    st.write(f"{st.session_state['a12__1']} \u00F7 {st.session_state['b12__1']}의 {st.session_state['y12_p1']}하면 답은 {st.session_state['right_answer5']}가 됩니다.")
+    st.write(f"{st.session_state['a12__1']} \u00F7 {st.session_state['b12__1']}의 몫을 {st.session_state['y12_2_p1']}까지만 구하면 답은 {st.session_state['right_answer5']}가 됩니다.")
     st.write("이때 ", st.session_state['right_answer5'], "를 ", st.session_state['y12_2_p1'], "에서 반올림하면 ", st.session_state['x12_p1'], "이 된답니다.")
     st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 잘 몰랐는지 확인하고 더 연습해봅시다.")
 
@@ -225,7 +225,7 @@ if st.session_state["Q12_p2"] == 1:
 if st.session_state["Q12_p2"] == 2.1:  
     st.write("몫을 반올림하여 구하는 데 어려움이 있는 것 같군요.")
     st.write("우선 몫을", st.session_state['y12_2_p2'], "까지만 구한 후 답을 입력해봅시다.")
-    Q12_easy_Text_p2 = f"연습 12-2. {st.session_state['a12_p2']} \u00F7 {st.session_state['b12_p2']}의 몫을 {st.session_state['y12_2_p2']}까지만 구해보시오."
+    Q12_easy_Text_p2 = f"연습 12-2. {st.session_state['a12_p2']} \u00F7 {st.session_state['b12_p2']}의 몫을 {st.session_state['y12_2_p2']}까지만 구하시오."
     st.markdown(Q12_easy_Text_p2)
     answer3_p2 = st.number_input("답 : ", key="3_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     st.session_state['right_answer6'] = float(st.session_state['a12_p2']/st.session_state['b12_p2'])
@@ -266,7 +266,7 @@ if st.session_state["Q12_p2"] == 3.1:
     st.write("그렇게 되면 ", st.session_state["a12_p2"], "이 ", a12_p2, "로 바뀌게 되고,")
     st.write(st.session_state["b12_p2"], "이 ", b12_p2, "로 바뀌게 됩니다.")
     st.write("그렇다면 자연수의 나눗셈으로 바꾼 후 몫을", st.session_state['y12_2_p2'], "까지만 구한 후 답을 입력해봅시다.")
-    Q12_easy_Text_2_p2 = f"연습 12-2. {a12_p2} \u00F7 {b12_p2}의 몫을 {st.session_state['y12_2_p2']}까지만 구해보시오."
+    Q12_easy_Text_2_p2 = f"연습 12-2. {a12_p2} \u00F7 {b12_p2}의 몫을 {st.session_state['y12_2_p2']}까지만 구하시오."
     st.markdown(Q12_easy_Text_2_p2)
     answer5_p2 = st.number_input("답 : ", key="5_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="e_p2", on_click=make5_p2, disabled=st.session_state["B43_p2"]): 
@@ -298,7 +298,7 @@ if st.session_state["Q12_p2"] == 4:
     st.write("오답입니다. 소수의 나눗셈과 반올림에 모두 어려움이 있었군요.")
     st.write("그래도 반올림에 대해서는 다시 설명하겠습니다. 특정 자리에서 반올림은 특정 자리가 4 이하면 버림, 5 이상이면 올림을 하면 됩니다.")
     st.write("위에서 풀지 못한 문제의 답을 이용해 반올림 과정을 살펴봅시다.")
-    st.write(f"{st.session_state['a12__2']} \u00F7 {st.session_state['b12__2']}의 {st.session_state['y12_p2']}하면 답은 {st.session_state['right_answer6']}가 됩니다.")
+    st.write(f"{st.session_state['a12__2']} \u00F7 {st.session_state['b12__2']}의 몫을 {st.session_state['y12_2_p2']}까지만 구하면 답은 {st.session_state['right_answer6']}가 됩니다.")
     st.write("이때 ", st.session_state['right_answer6'], "를 ", st.session_state['y12_2_p2'], "에서 반올림하면 ", st.session_state['x12_p2'], "이 된답니다.")
     st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 잘 몰랐는지 확인하고 더 연습해봅시다.")
 
