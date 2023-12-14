@@ -153,7 +153,7 @@ if st.session_state["Q12_p1"] == 4:
 
 
 
-Q12_Text_p2 = f'연습 12-1. {st.session_state["a12_p2"]} \u00F7 {st.session_state["b12_p2"]}의 {st.session_state["y12_p2"]}하시오.'
+Q12_Text_p2 = f'연습 12-2. {st.session_state["a12_p2"]} \u00F7 {st.session_state["b12_p2"]}의 {st.session_state["y12_p2"]}하시오.'
 st.subheader(Q12_Text_p2)
 answer1_p2 = st.number_input("답 : ", key="1_p2", value=None, placeholder="답을 입력하세요.", format="%f")
 
