@@ -80,7 +80,8 @@ if st.session_state["Q11"] == 2.1:
     st.markdown(Q11_easy_Text)
     answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
     st.session_state['right_answer1'] = float(st.session_state['a11']/st.session_state['b11'])
-    st.session_state['right_answer1'] = f"{st.session_state['right_answer1'].{st.session_state['round_q1']}f}"
+    right_answer1 = st.session_state['right_answer1']
+    st.session_state['right_answer1'] = f"{right_answer1.{st.session_state['round_q1']}f}"
     if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B35"]): 
         if answer3 == None:
             answer3 = 0
