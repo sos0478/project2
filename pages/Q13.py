@@ -6,6 +6,7 @@ Q13_Text = f'13. {st.session_state["a13"]} \u00F7 {st.session_state["b13"]}의 {
 st.subheader(Q13_Text)
 answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입력하세요.", format="%f")
 
+
 if "N13" not in st.session_state:
     st.session_state["N13"] = True
 
@@ -69,11 +70,10 @@ if st.session_state["Q13"] == 2.1:
     Q13_easy_Text = f"13. {st.session_state['a13']} \u00F7 {st.session_state['b13']}의 몫을 자연수 부분까지 구해보시오."
     st.markdown(Q13_easy_Text)
     answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
-    right_answer = st.session_state["y13_2"]
     if st.button("채점하기", key="c", on_click=make3, disabled=st.session_state["B48"]): 
         if answer3 == None:
             answer3 = 0
-        if int(answer3) == int(right_answer):
+        if int(answer3) == int(st.session_state["y13_2"]):
             st.write("정답입니다.")
             st.session_state["Q13"] = st.session_state["Q13"] + 0.4
         else:
@@ -82,7 +82,7 @@ if st.session_state["Q13"] == 2.1:
 
 if st.session_state["Q13"] == 2.5:
     st.write("그럼 이제 몫의 자연수 부분을 이용하여 나머지를 구해봅시다.")
-    st.write("방금 입력한 몫의 자연수 부분인 ", int(right_answer), "를 나누는 수인 ", st.session_state['b13'], "에 곱해서 나누어지는 수인 ", st.session_state['a13'], "에서 빼주면 됩니다.")
+    st.write("방금 입력한 몫의 자연수 부분인 ", int(st.session_state["y13_2"]), "를 나누는 수인 ", st.session_state['b13'], "에 곱해서 나누어지는 수인 ", st.session_state['a13'], "에서 빼주면 됩니다.")
     st.write(Q13_Text)
     answer4 = st.number_input("답 : ", key="4", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="d", on_click=make4, disabled=st.session_state["B49"]): 
@@ -98,7 +98,7 @@ if st.session_state["Q13"] == 2.5:
             st.session_state["N13"] = False
             st.write("오답입니다. 나머지를 구하는 방식을 이해하지 못하거나 계산 실수가 있었군요.")
             st.write("7을 2로 나누고 남은 나머지를 구할 때 7에서 몫인 3에 2를 곱한 후 빼주듯이")
-            st.write(st.session_state['a13'], "에서 ", int(right_answer), "에 ", st.session_state['b13'], "를 곱하면 ", st.session_state['x13'], "이 된답니다.")
+            st.write(st.session_state['a13'], "에서 ", int(st.session_state["y13_2"]), "에 ", st.session_state['b13'], "를 곱하면 ", st.session_state['x13'], "이 된답니다.")
             st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 놓쳤는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
 
@@ -126,7 +126,7 @@ if st.session_state["Q13"] == 3.1:
 
 if st.session_state["Q13"] == 3.5:
     st.write("그럼 이제 몫의 자연수 부분을 이용하여 나머지를 구해봅시다. 나머지를 구할 때는 몫의 자연수 부분을 구하느라 자연수로 바꾸었던 숫자를 다시 소수로 돌려놓고 생각해야 합니다.")
-    st.write("방금 입력한 몫의 자연수 부분인 ", int(right_answer), "를 나누는 수인 ", st.session_state['b13'], "에 곱해서 나누어지는 수인 ", st.session_state['a13'], "에서 빼주면 됩니다.")
+    st.write("방금 입력한 몫의 자연수 부분인 ", int(st.session_state["y13_2"]), "를 나누는 수인 ", st.session_state['b13'], "에 곱해서 나누어지는 수인 ", st.session_state['a13'], "에서 빼주면 됩니다.")
     st.write(Q13_Text)
     answer6 = st.number_input("답 : ", key="6", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="f", on_click=make6, disabled=st.session_state["B51"]): 
@@ -142,7 +142,7 @@ if st.session_state["Q13"] == 3.5:
             st.session_state["N13"] = False
             st.write("오답입니다. 나머지를 구하는 방식을 이해하지 못하거나 계산 실수가 있었군요.")
             st.write("7을 2로 나누고 남은 나머지를 구할 때 7에서 몫인 3에 2를 곱한 후 빼주듯이")
-            st.write(st.session_state['a13'], "에서 ", int(right_answer), "에 ", st.session_state['b13'], "를 곱한 후 빼주면 ", st.session_state['x13'], "이 된답니다.")
+            st.write(st.session_state['a13'], "에서 ", int(st.session_state["y13_2"]), "에 ", st.session_state['b13'], "를 곱한 후 빼주면 ", st.session_state['x13'], "이 된답니다.")
             st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 놓쳤는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
 if st.session_state["Q13"] == 4:
@@ -150,9 +150,9 @@ if st.session_state["Q13"] == 4:
     st.write("오답입니다. 소수의 나눗셈과 나머지를 구하는 것에 모두 어려움이 있었군요.")
     st.write("그래도 나머지를 구하는 방법에 대해서는 다시 설명하겠습니다.")    
     st.write("위에서 풀지 못한 문제의 답을 이용해 나머지를 구하는 과정을 살펴봅시다.")
-    st.write(f"{a13} \u00F7 {b13}의 몫을 자연수 부분까지 구하면 답은 {int(right_answer)}가 됩니다.")
+    st.write(f"{a13} \u00F7 {b13}의 몫을 자연수 부분까지 구하면 답은 {int(st.session_state["y13_2"])}가 됩니다.")
     st.write("7을 2로 나누고 남은 나머지를 구할 때 7에서 몫인 3에 2를 곱한 후 빼주듯이")
-    st.write(st.session_state['a13'], "에서 ", int(right_answer), "에 ", st.session_state['b13'], "를 곱한 후 빼주면 ", st.session_state['x13'], "이 된답니다.")
+    st.write(st.session_state['a13'], "에서 ", int(st.session_state["y13_2"]), "에 ", st.session_state['b13'], "를 곱한 후 빼주면 ", st.session_state['x13'], "이 된답니다.")
     st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 잘 몰랐는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
 
