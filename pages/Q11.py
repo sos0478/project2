@@ -158,7 +158,7 @@ if st.session_state["Q11"] == 4:
     st.write("오답입니다. 소수의 나눗셈과 반올림에 모두 어려움이 있었군요.")
     st.write("그래도 반올림에 대해서는 다시 설명하겠습니다. 특정 자리에서 반올림은 특정 자리가 4 이하면 버림, 5 이상이면 올림을 하면 됩니다.")
     st.write("위에서 풀지 못한 문제의 답을 이용해 반올림 과정을 살펴봅시다.")
-    st.write(f"{st.session_state['a11__']} \u00F7 {st.session_state['b11__']}의 {st.session_state['y11']}하면 답은 {st.session_state['right_answer1']}가 됩니다.")
+    st.write(f"{st.session_state['a11__']} \u00F7 {st.session_state['b11__']}의 몫을 {st.session_state['y11_2']}까지만 구하면 답은 {st.session_state['right_answer1']}가 됩니다.")
     st.write("이때 ", st.session_state['right_answer1'], "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
     st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 잘 몰랐는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
