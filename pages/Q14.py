@@ -66,7 +66,7 @@ if st.session_state["Q14"] == 1:
             st.session_state["N14"] = False
             st.write("정답입니다.")
         else:
-            st.session_state["Q14"] = st.session_state["Q14"] + 1
+            st.session_state["Q14"] = st.session_state["Q14"] + 1.1
        
 
 if st.session_state["Q14"] == 2.1:  
