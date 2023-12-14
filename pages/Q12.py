@@ -169,7 +169,7 @@ if st.session_state["Q12"] == 4:
 
 st.write("채점을 마친 후에만 클릭하여 다음 문제로 넘어갈 수 있습니다.")
 if st.button("다음 문제로 넘어가기", disabled=st.session_state["N12"]):
-    switch_page("Q12")
+    switch_page("Q13")
 
 if st.session_state["C11"] == 1 and st.session_state["C12"] == 1:
     st.session_state["N12-UP"] = False
