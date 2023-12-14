@@ -140,7 +140,7 @@ st.session_state["y12_up"] = Q12_S.iat[1, 4]
 st.session_state["y12_up_2"] = Q12_S.iat[1, 5]
 
 Q14_UP = situation_data.sample(5, replace=False)
-st.session_state["Q14_UP"] = Q14_UP.iat[0, 2]
+st.session_state["Q14_UP"] = Q14_UP.iat[1, 2]
 st.session_state["a14_up"] = Q14_S.iat[1, 1]
 st.session_state["b14_up"] = Q14_S.iat[1, 2]
 st.session_state["x14_up"] = Q14_S.iat[1, 3]
@@ -175,7 +175,7 @@ st.session_state["x12_up_p"] = Q12_S.iat[3, 3]
 st.session_state["y12_up_p"] = Q12_S.iat[3, 4]
 st.session_state["y12_up_2_p"] = Q12_S.iat[3, 5]
 
-st.session_state["Q14_UP_p"] = Q14_UP.iat[1, 2]
+st.session_state["Q14_UP_p"] = Q14_UP.iat[2, 2]
 st.session_state["a14_up_p"] = Q14_S.iat[3, 1]
 st.session_state["b14_up_p"] = Q14_S.iat[3, 2]
 st.session_state["x14_up_p"] = Q14_S.iat[3, 3]
