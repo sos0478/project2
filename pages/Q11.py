@@ -8,6 +8,10 @@ answer1 = st.number_input("답 : ", key="1", value=None, placeholder="답을 입
 
 if "right_answer1" not in st.session_state:
     st.session_state["right_answer1"] = 0
+if "a11__" not in st.session_state:
+    st.session_state["a11__"] = 0
+if "b11__" not in st.session_state:
+    st.session_state["b11__"] = 0
 
 if "N11" not in st.session_state:
     st.session_state["N11"] = True
@@ -111,15 +115,15 @@ if st.session_state["Q11"] == 2.5:
 
 if st.session_state["Q11"] == 3.1:  
     st.write("소수의 나눗셈 자체에 어려움이 있는 것 같군요. 그렇다면 자연수로 바꿔서 나눗셈을 진행해봅시다.")
-    a11 = int(st.session_state["a11"]*10)
-    b11 = int(st.session_state["b11"]*10)
+    st.session_state["a11__"] = int(st.session_state["a11"]*10)
+    st.session_state["b11__"] = int(st.session_state["b11"]*10)
     st.write("나누는 수와 나누어지는 수에 같은 수를 곱해도 몫은 변하지 않는다는 점을 이용하면 자연수로 쉽게 바꿀 수 있답니다.")
     st.write("주의할 점은 나누어지는 수는 이미 자연수라도 나누는 수를 자연수로 만들기 위해 같은 수를 꼭 곱해줘야 한다는 것입니다.")
     st.write("지금 문제는 나누는 수와 나누어지는 수에 똑같이 10을 곱해주면 되겠네요.")
-    st.write("그렇게 되면 ", st.session_state["a11"], "이 ", a11, "로 바뀌게 되고,")
-    st.write(st.session_state["b11"], "이 ", b11, "로 바뀌게 됩니다.")
+    st.write("그렇게 되면 ", st.session_state["a11"], "이 ", st.session_state["a11__"], "로 바뀌게 되고,")
+    st.write(st.session_state["b11"], "이 ", st.session_state["b11__"], "로 바뀌게 됩니다.")
     st.write("그렇다면 자연수의 나눗셈으로 바꾼 후 몫을", st.session_state['y11_2'], "까지 구한 후 답을 입력해봅시다.")
-    Q11_easy_Text_2 = f"11. {a11} \u00F7 {b11}의 {st.session_state['y11']}하시오."
+    Q11_easy_Text_2 = f"11. {st.session_state["a11__"]} \u00F7 {st.session_state["b11__"]}의 {st.session_state['y11']}하시오."
     st.markdown(Q11_easy_Text_2)
     answer5 = st.number_input("답 : ", key="5", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="e", on_click=make5, disabled=st.session_state["B37"]): 
@@ -154,7 +158,7 @@ if st.session_state["Q11"] == 4:
     st.write("오답입니다. 소수의 나눗셈과 반올림에 모두 어려움이 있었군요.")
     st.write("그래도 반올림에 대해서는 다시 설명하겠습니다. 특정 자리에서 반올림은 특정 자리가 4 이하면 버림, 5 이상이면 올림을 하면 됩니다.")
     st.write("위에서 풀지 못한 문제의 답을 이용해 반올림 과정을 살펴봅시다.")
-    st.write(f"{a11} \u00F7 {b11}의 {st.session_state['y11']}하면 답은 {st.session_state['right_answer1']}가 됩니다.")
+    st.write(f"{st.session_state["a11__"]} \u00F7 {st.session_state["n11__"]}의 {st.session_state['y11']}하면 답은 {st.session_state['right_answer1']}가 됩니다.")
     st.write("이때 ", st.session_state['right_answer1'], "를 ", st.session_state['y11_2'], "에서 반올림하면 ", st.session_state['x11'], "이 된답니다.")
     st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 잘 몰랐는지 확인하고 다음 문제로 넘어가도록 합시다.")
 
