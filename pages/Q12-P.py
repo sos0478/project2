@@ -73,8 +73,8 @@ if st.session_state["Q12_p1"] == 1:
 
 if st.session_state["Q12_p1"] == 2.1:  
     st.write("몫을 반올림하여 구하는 데 어려움이 있는 것 같군요.")
-    st.write("우선 몫을", st.session_state['y12_2_p1'], "까지 구한 후 답을 입력해봅시다.")
-    Q12_easy_Text = f"연습 12-1. {st.session_state['a12_p1']} \u00F7 {st.session_state['b12_p1']}의 몫을 {st.session_state['y12_2_p1']}까지 구해보시오."
+    st.write("우선 몫을", st.session_state['y12_2_p1'], "까지만 구한 후 답을 입력해봅시다.")
+    Q12_easy_Text = f"연습 12-1. {st.session_state['a12_p1']} \u00F7 {st.session_state['b12_p1']}의 몫을 {st.session_state['y12_2_p1']}까지만 구하시오."
     st.markdown(Q12_easy_Text)
     answer3 = st.number_input("답 : ", key="3", value=None, placeholder="답을 입력하세요.", format="%f")
     st.session_state['right_answer5'] = float(st.session_state['a12_p1']/st.session_state['b12_p1'])
@@ -114,8 +114,8 @@ if st.session_state["Q12_p1"] == 3.1:
     st.write("지금 문제는 나누는 수와 나누어지는 수에 똑같이 100을 곱해주면 되겠네요.")
     st.write("그렇게 되면 ", st.session_state["a12_p1"], "이 ", st.session_state['a12__1'], "로 바뀌게 되고,")
     st.write(st.session_state["b12_p1"], "이 ", st.session_state['b12__1'], "로 바뀌게 됩니다.")
-    st.write("그렇다면 자연수의 나눗셈으로 바꾼 후 몫을", st.session_state['y12_2_p1'], "까지 구한 후 답을 입력해봅시다.")
-    Q12_easy_Text_2 = f"연습 12-1. {st.session_state['a12__1']} \u00F7 {st.session_state['b12__1']}의 {st.session_state['y12_p1']}하시오."
+    st.write("그렇다면 자연수의 나눗셈으로 바꾼 후 몫을", st.session_state['y12_2_p1'], "까지만 구한 후 답을 입력해봅시다.")
+    Q12_easy_Text_2 = f"연습 12-1. {st.session_state['a12__1']} \u00F7 {st.session_state['b12__1']}의 몫을 {st.session_state['y12_2_p1']}까지만 구하시오."
     st.markdown(Q12_easy_Text_2)
     answer5 = st.number_input("답 : ", key="5", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="e", on_click=make5, disabled=st.session_state["B43_p1"]): 
@@ -224,8 +224,8 @@ if st.session_state["Q12_p2"] == 1:
 
 if st.session_state["Q12_p2"] == 2.1:  
     st.write("몫을 반올림하여 구하는 데 어려움이 있는 것 같군요.")
-    st.write("우선 몫을", st.session_state['y12_2_p2'], "까지 구한 후 답을 입력해봅시다.")
-    Q12_easy_Text_p2 = f"연습 12-2. {st.session_state['a12_p2']} \u00F7 {st.session_state['b12_p2']}의 몫을 {st.session_state['y12_2_p2']}까지 구해보시오."
+    st.write("우선 몫을", st.session_state['y12_2_p2'], "까지만 구한 후 답을 입력해봅시다.")
+    Q12_easy_Text_p2 = f"연습 12-2. {st.session_state['a12_p2']} \u00F7 {st.session_state['b12_p2']}의 몫을 {st.session_state['y12_2_p2']}까지만 구해보시오."
     st.markdown(Q12_easy_Text_p2)
     answer3_p2 = st.number_input("답 : ", key="3_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     st.session_state['right_answer6'] = float(st.session_state['a12_p2']/st.session_state['b12_p2'])
@@ -265,8 +265,8 @@ if st.session_state["Q12_p2"] == 3.1:
     st.write("지금 문제는 나누는 수와 나누어지는 수에 똑같이 100을 곱해주면 되겠네요.")
     st.write("그렇게 되면 ", st.session_state["a12_p2"], "이 ", a12_p2, "로 바뀌게 되고,")
     st.write(st.session_state["b12_p2"], "이 ", b12_p2, "로 바뀌게 됩니다.")
-    st.write("그렇다면 자연수의 나눗셈으로 바꾼 후 몫을", st.session_state['y12_2_p2'], "까지 구한 후 답을 입력해봅시다.")
-    Q12_easy_Text_2_p2 = f"연습 12-2. {a12_p2} \u00F7 {b12_p2}의 {st.session_state['y12_p2']}하시오."
+    st.write("그렇다면 자연수의 나눗셈으로 바꾼 후 몫을", st.session_state['y12_2_p2'], "까지만 구한 후 답을 입력해봅시다.")
+    Q12_easy_Text_2_p2 = f"연습 12-2. {a12_p2} \u00F7 {b12_p2}의 몫을 {st.session_state['y12_2_p2']}까지만 구해보시오."
     st.markdown(Q12_easy_Text_2_p2)
     answer5_p2 = st.number_input("답 : ", key="5_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="e_p2", on_click=make5_p2, disabled=st.session_state["B43_p2"]): 
