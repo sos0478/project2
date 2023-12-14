@@ -255,7 +255,7 @@ if st.session_state["Q11_p2"] == 2.5:
 
 if st.session_state["Q11_p2"] == 3.1:  
     st.write("소수의 나눗셈 자체에 어려움이 있는 것 같군요. 그렇다면 자연수로 바꿔서 나눗셈을 진행해봅시다.")
-    st.session_state['a11__2'] = 0 = int(st.session_state["a11_p2"]*10)
+    st.session_state['a11__2'] = int(st.session_state["a11_p2"]*10)
     st.session_state['b11__2'] = int(st.session_state["b11_p2"]*10)
     st.write("나누는 수와 나누어지는 수에 같은 수를 곱해도 몫은 변하지 않는다는 점을 이용하면 자연수로 쉽게 바꿀 수 있답니다.")
     st.write("주의할 점은 나누어지는 수는 이미 자연수라도 나누는 수를 자연수로 만들기 위해 같은 수를 꼭 곱해줘야 한다는 것입니다.")
