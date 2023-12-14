@@ -155,7 +155,7 @@ if st.session_state["Q13"] == 4:
     st.write("오답입니다. 소수의 나눗셈과 나머지를 구하는 것에 모두 어려움이 있었군요.")
     st.write("그래도 나머지를 구하는 방법에 대해서는 다시 설명하겠습니다.")    
     st.write("위에서 풀지 못한 문제의 답을 이용해 나머지를 구하는 과정을 살펴봅시다.")
-    st.write(f"{a13} \u00F7 {b13}의 몫을 자연수 부분까지 구하면 답은 {int(st.session_state['y13_2'])}가 됩니다.")
+    st.write(f"{st.session_state["a13__"]} \u00F7 {st.session_state["b13__"]}의 몫을 자연수 부분까지 구하면 답은 {int(st.session_state['y13_2'])}가 됩니다.")
     st.write("7을 2로 나누고 남은 나머지를 구할 때 7에서 몫인 3에 2를 곱한 후 빼주듯이")
     st.write(st.session_state['a13'], "에서 ", int(st.session_state['y13_2']), "에 ", st.session_state['b13'], "를 곱한 후 빼주면 ", st.session_state['x13'], "이 된답니다.")
     st.write("자신이 입력한 값과 비교해보면서 어떤 부분을 잘 몰랐는지 확인하고 다음 문제로 넘어가도록 합시다.")
