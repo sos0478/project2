@@ -239,7 +239,7 @@ if st.session_state["Q11_p2"] == 2.1:
 
 if st.session_state["Q11_p2"] == 2.5:
     st.write("그럼 이제 구한 값을 반올림해보겠습니다. 특정 자리에서 반올림은 특정 자리가 4 이하면 버림, 5 이상이면 올림을 하면 됩니다.")
-    st.write("방금 입력한 ", st.session_state["right_answer3"], "를 ", st.session_state['y11_2_p2'], "에서 반올림한 값을 입력해봅시다.")
+    st.write("방금 입력한 ", st.session_state['right_answer3'], "를 ", st.session_state['y11_2_p2'], "에서 반올림한 값을 입력해봅시다.")
     answer4_p2 = st.number_input("답 : ", key="4_p2", value=None, placeholder="답을 입력하세요.", format="%f")
     if st.button("채점하기", key="d_p2", on_click=make4_p2, disabled=st.session_state["B36_p2"]):
         if answer4_p2 == None:
