@@ -45,7 +45,6 @@ if st.session_state["Q9"] == 2:
         if answer2 == None:
             answer2 = 0
         if float(answer2) == float(st.session_state["x9"]):
-            st.session_state["C9"] = st.session_state["C9"] + 1
             st.session_state["N9"] = False
             st.write("정답입니다. 이렇게 계산하기 쉬운 자연수로 바꿔서 대략적으로 가까운 답만 골라서 계산하면 된답니다.")
         else:
